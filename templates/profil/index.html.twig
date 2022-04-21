@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfilController!{% endblock %}
+
+{% block body %}
+<h1 class="text-muted text-center">Mon compte</h1>
+<div class="container">
+<h2 class="text-center">Bonjour {{app.user.nomComplet}}</h2>
+<hr>
+{% if is_granted("ROLE_ADMIN") %}
+<a href="{{path('app_user')}}">Voir les utilisateurs du site</a></br>
+<a href="">Voir les commentaires du site</a></br>
+<a href="{{path('app_all_article')}}">Voir les articles du site</a></br>
+{% endif %}
+
+<a href="{{path('app_user_edit', {id: app.user.id})}}">Editer mon profil</a></br>
+</div>
+{% endblock %}

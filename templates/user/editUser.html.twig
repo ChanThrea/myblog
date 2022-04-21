@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} User {% endblock %}
+
+{% block body %}
+
+{{form_start(form)}}
+
+<div class="row">
+    <div class="col">
+        {{form_row(form.nom)}}
+        {{form_row(form.prenom)}}
+        <!-- pr bloqué le mdp de l utilisateur -->
+        {{form_row(form.password,{'attr':{'disabled':'true'}})}}
+    </div>
+
+    <div class="col">
+        {{form_row(form.email)}}
+        {{form_row(form.datedeNaissance)}}
+        {{form_row(form.submit)}}
+    </div>
+</div>
+
+{{form_end(form)}}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %} 
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+<div class="row">
+  <h2 class="text-center">Nouvel article</h2>
+  <div class="col-md-6 mx-auto">
+    {{form(formArticle)}}
+  </div>
+</div>
+{% endblock %}
